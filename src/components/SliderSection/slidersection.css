@@ -1,0 +1,31 @@
+.slider-container {
+    /* width: 100vw; */
+    /* display: flex; */
+    flex-direction: column;
+    height: 100vh;
+    overflow-y: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    /* padding: 2px 20px; */
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+.slide-box {
+    display: flex;
+    aspect-ratio: 3/4;
+    width: 100%;
+    flex-shrink: 0;
+    /* border-block: 8px solid white; */
+    height: 40vh;
+    /* height: 20vh; */
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    background-color: orange;
+}
+
+.card_i{
+    font-size: 90px;
+}

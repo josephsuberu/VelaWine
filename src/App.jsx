@@ -1,17 +1,11 @@
-
-import './App.css'
-import SliderSection from './components/SliderSection/SliderSection'
+import "./App.css";
 
 function App() {
-
   return (
-    <>
-
-    <p>hii</p>
-    <SliderSection />
-    <p>hii</p>
-    </>
-  )
+    <main>
+      *Homepage of Vela wine*
+    </main>
+  );
 }
 
-export default App
+export default App;

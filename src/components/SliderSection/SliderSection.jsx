@@ -6,7 +6,7 @@ import "./slidersection.css";
 /** component */
 const slides = Array.from({ length: 5 }, (_, i) => i);
 
-export default function SliderSection() {
+const SliderSection = () => {
   const { ref } = useSmooothy({
     snap: true,
     vertical: true,
@@ -17,7 +17,7 @@ export default function SliderSection() {
       useKeyboard: true,
     },
     onSlideChange: (currentSlide) => {
-      
+
     },
   });
 
@@ -34,3 +34,5 @@ export default function SliderSection() {
     </ul>
   );
 }
+
+export default SliderSection

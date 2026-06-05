@@ -1,0 +1,11 @@
+.dp-box {
+    position: fixed;
+    bottom: 1vw;
+    left: 1vw;
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-size: 14px;
+    border: 2px solid;
+    letter-spacing: -0.03em;
+    outline: none;
+}

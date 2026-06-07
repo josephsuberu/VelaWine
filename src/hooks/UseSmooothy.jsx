@@ -29,5 +29,5 @@ export function useSmooothy(config) {
     };
   }, [slider]);
 
-  return { ref: refCallback };
+  return { ref: refCallback, slider };
 }

@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import "./dropdown.css"
+import "./dropdown.css";
 
 const DropdownMenu = () => {
   const componentMeta = [
@@ -24,7 +24,7 @@ const DropdownMenu = () => {
   const navigate = useNavigate();
 
   return (
-    <select className="dp-box" onChange={(e) => navigate(e.target.value)}>
+    <select name="dropdown dev navigation" className="dp-box" onChange={(e) => navigate(e.target.value)}>
       {componentMeta.map((cmt, idx) => {
         return (
           <option key={`opt-${idx}`} value={cmt.path}>

@@ -9,9 +9,9 @@ createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
       <Routing />
-    {/* persistent page switching controls */}
-    <DropdownMenu />
-    </BrowserRouter>
 
+      {/* persistent page switching controls */}
+      <DropdownMenu />
+    </BrowserRouter>
   </StrictMode>,
 );

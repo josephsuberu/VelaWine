@@ -1,0 +1,69 @@
+:root {
+    --right-1: 0px;
+    --down-1: -11.41px;
+    --blur-1: 2px;
+    --color-1: #333;
+
+    --right-2: 0px;
+    --down-2: -23.80px;
+    --blur-2: 2px;
+    --color-2: #333;
+
+    --right-3: 0px;
+    --down-3: -36.30px;
+    --blur-3: 2px;
+    --color-3: #333;
+
+    --down-4: -49.13px;
+    --down-5: -70px;
+}
+
+
+.txt-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+[data-ingredient] {
+    /* font-family: "PP Neue Montreal"; */
+    /* font-family: "Host Grotesk"; */
+    /* font-weight: 500; */
+    font-family: "Sentient";
+    font-size: 12vw;
+    text-shadow: var(--right-1) var(--down-1) var(--blur-1) var(--color-1),
+        var(--right-2) var(--down-2) var(--blur-2) var(--color-2),
+        var(--right-3) var(--down-3) var(--blur-3) var(--color-3),
+        0px var(--down-4) 2px var(--color-3),
+        0px var(--down-5) 2px var(--color-3);
+    color: #333333;
+    background: #FFFFFF;
+    letter-spacing: -0.08em;
+    position: relative;
+    animation: stagger-text-inView 1.6s forwards cubic-bezier(0.175, 0.885, 0.32, 1.1);
+}
+
+
+@keyframes stagger-text-inView {
+    from {
+        -webkit-transform: translateY(-100%);
+        -moz-transform: translateY(-100%);
+        transform: translateY(-100%);
+    }
+
+    to {
+        -webkit-transform: translateY(0%);
+        -moz-transform: translateY(0%);
+        transform: translateY(0%);
+        transition: text-shadow .8s cubic-bezier(0.215, 0.610, 0.355, 1);
+        text-shadow: var(--right-1) 0px var(--blur-1) var(--color-1),
+            var(--right-2) 0px var(--blur-2) var(--color-2),
+            var(--right-3) 0px var(--blur-3) var(--color-3),
+            var(--right-3) 0px var(--blur-3) var(--color-3),
+            var(--right-3) 0px var(--blur-3) var(--color-3),
+
+        ;
+    }
+}

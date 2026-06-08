@@ -76,16 +76,18 @@ const SliderSection = () => {
   // }, []);
 
   return (
-    <ul data-arc-container className="slider-container" ref={ref}>
-      {slides.map((slide, i) => (
-        <li key={i} id={`slide-${i}`} className="slide-box">
-          <div className="relative h-full w-full p-8 outline outline-gray-800">
-            <div className="h-full w-full outline outline-gray-600" />
-            <p className="absolute card_i left-2 top-2 z-10">{slide.text}</p>
-          </div>
-        </li>
-      ))}
-    </ul>
+    <section className="section__slider">
+      <div className="divider" />
+      <ul data-arc-container className="slider-container" ref={ref}>
+        {slides.map((slide, i) => (
+          <li key={i} id={`slide-${i}`} className="slide-box">
+            <div className="relative h-full w-full p-8 outline outline-gray-800">
+              <p className="absolute card_i left-2 top-2 z-10">{slide.text}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 };
 

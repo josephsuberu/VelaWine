@@ -1,36 +1,58 @@
 .slider-container {
     width: 100%;
-    flex: 1;
     height: 100vh;
-    overflow-y: hidden;
+    /* height: 100%; */
+    /* display: block; */
     -webkit-user-select: none;
     -moz-user-select: none;
     user-select: none;
-    position: relative;
+    position: sticky;
+    top: 0;
+    text-align: center;
 }
 
-.slider-container::before {
-    content: '';
-    /* position: absolute; */
-    float: left;
-    width: 60px;
+[data-arc-wrapper] {
+    width: 100%;
+    overflow: hidden;
+
+    /* display: flex; */
     height: 100%;
-    shape-outside: circle(50% at 100% 50%);
+}
+
+
+.arc {
+    width: 60%;
+    /* height: 9999px; */
+    height: 100vh;
+    float: left;
+    shape-outside: circle(50vw at 0% 50%) margin-box;
+    clip-path: circle(56vw at 0% 50%);
+    shape-margin: 50px;
+    /* display: block; */
+    /* background-color: red; */
 }
 
 .slide-box {
     display: flex;
-    aspect-ratio: 3/4;
+    align-items: center;
+    justify-content: center;
+    /* aspect-ratio: 3/4; */
     width: 100%;
-    flex-shrink: 0;
-    height: 40vh;
-    transform: translate(-50%, -50%);
+    /* align-content: center; */
+    /* flex-shrink: 0; */
+    height: 45vh;
+    /* transform: translate(-50%, -50%); */
     padding: 4px;
     background-color: orange;
 }
 
 .card_i {
-    font-size: 80px;
+    font-size: 40px;
+    width: auto;
+    font-family: "Sentient";
+    letter-spacing: -0.05em;
+    /* text-align: center; */
+
 }
 
 
@@ -43,6 +65,7 @@
 
 .section__slider {
     display: flex;
+    width: 100%;
     overflow: hidden;
 
 }

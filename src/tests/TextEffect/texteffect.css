@@ -47,11 +47,11 @@
 
 
 @keyframes stagger-text-inView {
-    from {
+    /* from {
         -webkit-transform: translateY(-100%);
         -moz-transform: translateY(-100%);
         transform: translateY(-100%);
-    }
+    } */
 
     to {
         -webkit-transform: translateY(0%);

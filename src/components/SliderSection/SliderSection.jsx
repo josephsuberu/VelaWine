@@ -2,7 +2,7 @@ import React from "react";
 import { Pane } from "tweakpane";
 import { useSmooothy } from "../../hooks/UseSmooothy";
 import "./slidersection.css";
-import { useLayoutEffect, useRef } from "react";
+import { useRef, useLayoutEffect } from "react";
 
 /** component */
 const slides = [
@@ -16,7 +16,7 @@ const slides = [
     text: "Creative Dev?",
   },
   {
-    text: "Which am i?",
+    text: "Which am i",
   },
   {
     text: "I just love to",
@@ -43,51 +43,51 @@ const SliderSection = () => {
       useKeyboard: true,
     },
     onSlideChange: (currentSlide, slide) => {
-      // console.log("current slide", currentSlide);
-      // console.log("slide", slide);
-      //  slider.items[previous].classList.remove("active")
-      // slider.items[slide].classList.add("active")
+      console.log("current slide", currentSlide);
     },
   });
 
-  // fire after DOM mutations.
-  // useLayoutEffect(() => {
-  //   containerRef.current = document.querySelector("[data-arc-container]");
-  //   const sliderBox = containerRef.current;
+  const activeIndex = Math.floor(slides.length / 2);
 
-  //   const cx = sliderBox.offsetWidth / 2;
-  //   const cy = sliderBox.offsetHeight / 2;
-  //   const radius = 110;
-  //   const spreadDeg = 100;
-  //   const startAngle = 270 - spreadDeg / 2;
+  useLayoutEffect(() => {
+    const container = document.querySelector("[data-arc-container]");
 
-  //   slides.forEach((slide, i) => {
-  //     const angleDeg = startAngle + (spreadDeg / (slides.length - 1)) * i;
-  //     const angleRad = (angleDeg * Math.PI) / 180;
+    console.log(container);
+    if (!container) return;
+    const slides = container.querySelectorAll(".slide-box");
 
-  //     const x = cx + radius * Math.cos(angleRad);
-  //     const y = cy + radius * Math.sin(angleRad);
-  //     const rotation = (angleDeg * 180) / Math.PI;
+    const spacing = 80;
+    const arcStrength = 160;
+    const scaleStrength = 0.12;
 
-  //     sliderBox.style.transformOrigin = "center center";
-  //     sliderBox.style.top = x + "px";
-  //     sliderBox.style.left = y + "px";
-  //   });
-  // }, []);
+    slides.forEach((el, index) => {
+      const position = index - activeIndex;
+      const distance = position;
+
+      const t = distance;
+
+      const curve = Math.exp(-Math.abs(t) * 0.6);
+
+      //arc illusion
+      const x = Math.sin(t * 0.8) * arcStrength * curve;
+      const y = t * spacing;
+
+      const inner = el.querySelector(".card_i");
+
+      inner.style.transform = `translate3d(${x}px, 0px, 0)`;
+    });
+  }, [slides]);
 
   return (
-    <section className="section__slider">
-      <div className="divider" />
+    <div data-arc-wrapper className="">
       <ul data-arc-container className="slider-container" ref={ref}>
         {slides.map((slide, i) => (
           <li key={i} id={`slide-${i}`} className="slide-box">
-            <div className="relative h-full w-full p-8 outline outline-gray-800">
-              <p className="absolute card_i left-2 top-2 z-10">{slide.text}</p>
-            </div>
+            <p className="card_i">{slide.text}</p>
           </li>
         ))}
       </ul>
-    </section>
+    </div>
   );
 };
 
